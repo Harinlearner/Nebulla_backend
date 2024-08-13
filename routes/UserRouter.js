@@ -16,7 +16,7 @@ route.post('/blogs', (req, res) => {
 // Get all blog posts
 route.get('/blogs', (req, res) => {
     Blog.find({})
-    .sort({createdAt:1})  
+    .sort({createdAt:-1})  
       .then(blogs => res.json(blogs))
       .catch(err => res.status(500).json({ error: err.message }));
 });
